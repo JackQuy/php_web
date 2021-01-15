@@ -14,7 +14,7 @@ if(isset($_GET['id'])) {
         $text = $db->selectAllProduct($connect, "tbl_product");
     }
 
-$idProduct = $_GET['id'];
+$idProduct = $_GET['id'] + 1;
     $newProduct = array();
     if (!is_null($text)) {
         foreach($text as $val) {
