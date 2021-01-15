@@ -1,0 +1,78 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: mysql
+-- Thời gian đã tạo: Th1 15, 2021 lúc 10:05 AM
+-- Phiên bản máy phục vụ: 8.0.22
+-- Phiên bản PHP: 7.4.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `my_db`
+--
+CREATE DATABASE IF NOT EXISTS `my_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_vietnamese_ci;
+USE `my_db`;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_product`
+--
+
+CREATE TABLE `tbl_product` (
+  `id` int NOT NULL,
+  `title` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `content` varchar(200) COLLATE utf8_vietnamese_ci NOT NULL,
+  `price` int NOT NULL,
+  `color` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `size` char(10) COLLATE utf8_vietnamese_ci NOT NULL,
+  `quantity` int NOT NULL,
+  `image` varchar(200) COLLATE utf8_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_product`
+--
+
+INSERT INTO `tbl_product` (`id`, `title`, `content`, `price`, `color`, `size`, `quantity`, `image`) VALUES
+(1, 'Áo khoác nam', 'Áo Khoác Thể Thao Nam Dáng Bomber Dài Tay Khóa Kéo Kiêm Chống Nắng Phối Màu Thời Trang Trẻ Trung Phong Cách HNDC Zenko JK NAM 022', 290000, 'xanh', 's', 10, 'https://hanoitoplist.com/wp-content/uploads/2019/10/ao-khoac-nam-ha-noi.jpg'),
+(2, 'Giày thể thao nam', 'Giày Thể Thao Nam Sneaker Tăng 5Cm Chiều Cao, Đế Tổng Hợp Độ Bền Cao, Kiểu Dáng Cá Tính Cực Ngầu, Xu Hướng 2020 AVISHOP- 344', 280000, 'while', '42', 10, 'https://vn-test-11.slatic.net/p/541a42322759536a530d6bb676969ffc.jpg_400x400q80.jpg_.webp'),
+(3, 'Đầm dự tiệc', 'Đầm Dự Tiệc Trắng Tay Phồng Kết Hạt Siêu Xinh Vải Loại Một Cao Cấp', 160000, 'while', 's', 14, 'https://vn-live-01.slatic.net/p/7ce61548fb4354c3a83dc8dc832da73e.jpg_400x400q90.jpg_.webp'),
+(4, 'Áo sơ mi', 'Áo Sơ Mi Đũi ROUGH Cộc Tay Hai Túi Ngực Basic', 159000, 'black', 'M', 90, 'https://vn-live-01.slatic.net/p/4fde9e151e6ab520429eb890dd57206d.jpg_400x400q90.jpg_.webp');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int NOT NULL,
+  `username` char(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `fullname` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
+  `password` char(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `email` char(100) COLLATE utf8_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `username`, `fullname`, `password`, `email`) VALUES
+(1, 'phamquy', 'Phạm Quý', '1234', 'phquy9192@gmail.com');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
